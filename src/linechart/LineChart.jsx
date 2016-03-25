@@ -35,6 +35,7 @@ module.exports = React.createClass({
   render() {
 
     var props = this.props;
+    var setColor = '#A2AFB7';
 
     if (this.props.data && this.props.data.length < 1) {
       return null;
@@ -87,7 +88,7 @@ module.exports = React.createClass({
             margins={props.margins}
             width={innerWidth}
             height={innerHeight}
-            stroke={props.axesColor}
+            stroke={setColor}
             gridVertical={props.gridVertical}
             gridVerticalStroke={props.gridVerticalStroke}
             gridVerticalStrokeWidth={props.gridVerticalStrokeWidth}
@@ -108,7 +109,7 @@ module.exports = React.createClass({
             margins={props.margins}
             width={innerWidth}
             height={innerHeight}
-            stroke={props.axesColor}
+            stroke={setColor}
             gridHorizontal={props.gridHorizontal}
             gridHorizontalStroke={props.gridHorizontalStroke}
             gridHorizontalStrokeWidth={props.gridHorizontalStrokeWidth}

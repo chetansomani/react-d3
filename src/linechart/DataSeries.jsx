@@ -55,6 +55,17 @@ module.exports = React.createClass({
         }
 
     var lines = props.data.map((series, idx) => {
+      var color = "#ffffff";
+      var gtSeriesName = series.name;
+      if(gtSeriesName === "facebook"){
+        color = "#39579A";
+      }else if(gtSeriesName === "twitter"){
+        color = "#19A9E3";
+      }else if(gtSeriesName === "direct"){
+        color = "#E94435";
+      }else{
+        color = "#ffffff";
+      }
       return (
         <Line 
           path={interpolatePath(series.values)}
