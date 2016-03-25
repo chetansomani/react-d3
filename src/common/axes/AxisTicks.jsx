@@ -34,18 +34,18 @@ module.exports = React.createClass({
     return {
       innerTickSize: 6,
       outerTickSize: 6,
-      tickStroke: '#000',
+      tickStroke: '#A2AFB7',
       tickPadding: 3,
       tickArguments: [10],
       tickValues: null,
-      gridHorizontal: false,
-      gridVertical: false,
-      gridHorizontalStroke: '#D8D7D7',
-      gridVerticalStroke: '#D8D7D7',
+      gridHorizontal: true,
+      gridVertical: true,
+      gridHorizontalStroke: '#A2AFB7',
+      gridVerticalStroke: '#A2AFB7',
       gridHorizontalStrokeWidth: 1,
       gridVerticalStrokeWidth: 1,
-      gridHorizontalStrokeDash: '5, 5',
-      gridVerticalStrokeDash: '5, 5'
+      gridHorizontalStrokeDash: '0, 0',
+      gridVerticalStrokeDash: '0, 0'
     };
   },
 
@@ -183,7 +183,7 @@ module.exports = React.createClass({
           <line style={{
             strokeWidth: gridStrokeWidth,
             shapeRendering: 'crispEdges',
-            stroke: gridStroke,
+            stroke: '#A2AFB7',
             strokeDasharray: gridStrokeDashArray
             }} x2={x2grid} y2={y2grid}></line>
         )
@@ -200,12 +200,12 @@ module.exports = React.createClass({
         return (
           <g key={idx} className="tick" transform={tr(tick)} >
             {gridLine(adjustedScale(tick))}
-            <line style={{shapeRendering:'crispEdges',opacity:'1',stroke:props.tickStroke}} x2={x2} y2={y2} >
+            <line style={{shapeRendering:'crispEdges',opacity:'0.4',stroke:'#ffffff'}} x2={x2} y2={y2} >
             </line>
             <text
-              strokeWidth="0.01"
+              strokeWidth="0.5"
               dy={dy} x={x1} y={y1}
-              style={{stroke:props.tickTextStroke, fill:props.tickTextStroke}}
+              style={{stroke:'#ffffff', fill:props.tickTextStroke}}
               textAnchor={textAnchor}
               {...optionalTextProps}
             >
