@@ -55,26 +55,26 @@ module.exports = React.createClass({
         }
 
     var lines = props.data.map((series, idx) => {
-      var color = "#ffffff";
-      var gtSeriesName = series.name;
-      if(gtSeriesName === "Social"){
-        color = "#39579A";
-      }else if(gtSeriesName === "Search"){
-        color = "#19A9E3";
-      }else if(gtSeriesName === "Direct"){
-        color = "#E94435";
-      }
+        var color = "#ffffff";
+        var gtSeriesName = series.name;
+        if(gtSeriesName == "Social"){
+            color = "#39579A";
+        }else if(gtSeriesName == "Search"){
+            color = "#19A9E3";
+        }else if(gtSeriesName == "Direct"){
+            color = "#E94435";
+        }
 
-      return (
-        <Line 
-          path={interpolatePath(series.values)}
-          stroke={props.colors(props.colorAccessor(series, idx))}
-          strokeWidth={series.strokeWidth}
-          strokeDashArray={series.strokeDashArray}
-          seriesName={series.name}
-          key={idx}
-        />
-      );
+        return (
+            <Line
+                path={interpolatePath(series.values)}
+                stroke={color}
+                strokeWidth={series.strokeWidth}
+                strokeDashArray={series.strokeDashArray}
+                seriesName={series.name}
+                key={idx}
+            />
+        );
     });
 
     var voronoi = d3.geom.voronoi()
