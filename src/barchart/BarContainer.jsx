@@ -31,7 +31,7 @@ module.exports = React.createClass({
     return (
       <Bar
         {...props}
-        fill={this.state.fill}
+        fill={this.props.fill}
         handleMouseOver={props.hoverAnimation ? this._animateBar : null}
         handleMouseLeave={props.hoverAnimation ? this._restoreBar : null}
       />
