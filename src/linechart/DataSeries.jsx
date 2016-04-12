@@ -55,20 +55,10 @@ module.exports = React.createClass({
         }
 
     var lines = props.data.map((series, idx) => {
-        var color = "#ffffff";
-        var gtSeriesName = series.name;
-        if(gtSeriesName == "facebook"){
-            color = "#39579A";
-        }else if(gtSeriesName == "Google"){
-            color = "#19A9E3";
-        }else if(gtSeriesName == "Home"){
-            color = "#E94435";
-        }
-
         return (
             <Line
                 path={interpolatePath(series.values)}
-                stroke={color}
+                stroke={props.colors(props.colorAccessor(series, idx))}
                 strokeWidth={series.strokeWidth}
                 strokeDashArray={series.strokeDashArray}
                 seriesName={series.name}
